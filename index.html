@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Naura Afifah Fatchurohman</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0d0e12;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVIGATION BAR */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 950px;
+            background: rgba(22, 25, 34, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            border-radius: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        .btn-hire {
+            background: #ffffff;
+            color: #0d0e12;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .btn-hire:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        /* SECTION LAYOUT */
+        section {
+            padding: 100px 20px 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            color: #3b82f6;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        /* HERO / ABOUT ME SECTION */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+            min-height: 85vh;
+            padding-top: 140px;
+        }
+
+        .profile-card {
+            background: #161922;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 280px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            background-color: #262b38;
+        }
+
+        .profile-info h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .profile-info p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .badge {
+            background: #202532;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .badge span {
+            display: block;
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .about-text h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .about-text p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #3b82f6;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .activity-box {
+            background: #161922;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            border-radius: 16px;
+        }
+
+        .activity-box h4 {
+            color: #3b82f6;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .activity-box p {
+            color: #ffffff;
+            font-size: 0.85rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* WHAT I CAN DO SECTION */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+        }
+
+        .tools-box {
+            background: #161922;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            align-content: center;
+        }
+
+        .tool-icon {
+            background: #202532;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #3b82f6;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tool-icon span {
+            font-size: 0.75rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .tool-icon:hover {
+            transform: translateY(-4px);
+            color: #ffffff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #161922;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px;
+        }
+
+        .service-num {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .service-card p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background: #202532;
+            color: #cbd5e1;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+        }
+
+        /* WORK GALLERY SECTION */
+        .drive-banner {
+            background: linear-gradient(135deg, #1e293b, #161922);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 24px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .drive-banner-text h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .drive-banner-text p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* ACHIEVEMENT SECTION */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-card {
+            background: #161922;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px;
+            transition: transform 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .achievement-year {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .achievement-card h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .achievement-org {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .achievement-card p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: #161922;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 40px;
+        }
+
+        .contact-left h2 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .contact-left p {
+            color: #94a3b8;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            background: #202532;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px 20px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: background 0.3s;
+        }
+
+        .contact-item:hover {
+            background: #2a3142;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: #3b82f6;
+        }
+
+        .contact-item div span {
+            display: block;
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .contact-item div a {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .hero, .skills-container, .contact-container, .drive-banner {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tools-box, .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                width: 95%;
+                padding: 10px 16px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .about-text h1 {
+                font-size: 2rem;
+            }
+
+            .action-btns {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <div class="logo">
+            <div class="logo-avatar">N</div>
+            <span>Naura Afifah</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">What I Can Do</a></li>
+                <li><a href="#gallery">Work Gallery</a></li>
+                <li><a href="#achievement">Achievement</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn-hire">Contact Me</a>
+    </header>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="hero">
+        <div class="profile-card">
+            <!-- Tag gambar sudah diset ke foto_profil.jpeg -->
+            <img src="foto_profil.jpeg" alt="Foto Naura Afifah Fatchurohman" class="profile-img">
+            <div class="profile-info">
+                <h3>Naura Afifah Fatchurohman</h3>
+                <p>NIM: 26051214106</p>
+                <p>S1 Sistem Informasi - UNESA</p>
+            </div>
+            <div class="badge-container">
+                <div class="badge">
+                    <span>2026</span>
+                    Angkatan
+                </div>
+                <div class="badge">
+                    <span>Surabaya</span>
+                    Lokasi
+                </div>
+            </div>
+        </div>
+
+        <div class="about-text">
+            <span class="section-tag">ABOUT ME</span>
+            <h1>Data Analyst & UI/UX Enthusiast</h1>
+            <p>
+                Saya adalah mahasiswa S1 Sistem Informasi di Universitas Negeri Surabaya dengan ketertarikan kuat pada Analisis Data, Desain UI/UX, dan penerapan Artificial Intelligence (AI) dalam bisnis. Memiliki latar belakang pelatihan teknis serta hobi bernyanyi yang mengasah kreativitas saya.
+            </p>
+
+            <div class="action-btns">
+                <a href="CV Naura Afifah Fatchurohman.pdf" target="_blank" class="btn-primary">
+                    <i class="fa-solid fa-download"></i> Download CV
+                </a>
+                <a href="https://drive.google.com/drive/folders/1NhFyC664O20djf7OwPNmFoD6vMRyaJgF?usp=drive_link" target="_blank" class="btn-secondary">
+                    <i class="fa-brands fa-google-drive"></i> Folder Portofolio
+                </a>
+            </div>
+
+            <div class="activity-grid">
+                <div class="activity-box">
+                    <h4>Pendidikan</h4>
+                    <p>S1 Sistem Informasi UNESA (2026 - Sekarang)</p>
+                </div>
+                <div class="activity-box">
+                    <h4>Riwayat Sekolah</h4>
+                    <p>SMAN 5 Surabaya (2023 - 2026)</p>
+                </div>
+                <div class="activity-box">
+                    <h4>Aktivitas</h4>
+                    <p>Perkuliahan & Pelatihan Teknis</p>
+                </div>
+                <div class="activity-box">
+                    <h4>Hobi</h4>
+                    <p>Bernyanyi & Visual Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT I CAN DO SECTION -->
+    <section id="skills">
+        <span class="section-tag">MY CAPABILITIES</span>
+        <h2 class="section-title">What I Can Do</h2>
+
+        <div class="skills-container">
+            <!-- Icons & Tools -->
+            <div class="tools-box">
+                <div class="tool-icon" title="Python"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                <div class="tool-icon" title="SQL / BigQuery"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+                <div class="tool-icon" title="Excel"><i class="fa-solid fa-file-excel"></i><span>Excel</span></div>
+                <div class="tool-icon" title="Canva"><i class="fa-solid fa-palette"></i><span>Canva</span></div>
+                <div class="tool-icon" title="C / C++"><i class="fa-solid fa-code"></i><span>C/C++</span></div>
+                <div class="tool-icon" title="GitHub"><i class="fa-brands fa-github"></i><span>Git</span></div>
+            </div>
+
+            <!-- Skill Description Cards -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-num">01</div>
+                    <h3>Data Analysis & Analytics</h3>
+                    <p>Pemrosesan data, simulasi statistik, visualisasi data, serta query data menggunakan Python, SQL, BigQuery, dan Pivot Tables.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL / BigQuery</span>
+                        <span class="tag">Excel</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-num">02</div>
+                    <h3>UI/UX & Visual Design</h3>
+                    <p>Merancang antarmuka digital, wireframing, prototyping, serta desain grafis visual untuk media sosial dan presentasi.</p>
+                    <div class="tags">
+                        <span class="tag">Wireframing</span>
+                        <span class="tag">Prototyping</span>
+                        <span class="tag">Canva</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK GALLERY SECTION -->
+    <section id="gallery">
+        <span class="section-tag">SELECTED WORK</span>
+        <h2 class="section-title">Work Gallery & Repositories</h2>
+
+        <div class="drive-banner">
+            <div class="drive-banner-text">
+                <h3><i class="fa-brands fa-google-drive" style="color: #3b82f6; margin-right: 8px;"></i> Drive Portofolio Saya</h3>
+                <p>Seluruh dokumentasi karya, aset desain, sertifikat, dan file proyek tersimpan dengan rapi di Google Drive.</p>
+            </div>
+            <a href="https://drive.google.com/drive/folders/1NhFyC664O20djf7OwPNmFoD6vMRyaJgF?usp=drive_link" target="_blank" class="btn-primary" style="white-space: nowrap;">
+                Buka Google Drive <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENT SECTION -->
+    <section id="achievement">
+        <span class="section-tag">MILESTONES & CERTIFICATIONS</span>
+        <h2 class="section-title">Achievement & Training</h2>
+
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <span class="achievement-year">2026</span>
+                <h3>Software Engineering Coding Camp</h3>
+                <p class="achievement-org">RevoU</p>
+                <p>Mempelajari fondasi software engineering, logika pemrograman, dan pemecahan masalah teknis secara terstruktur.</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-year">2026</span>
+                <h3>Google Skills Arcade Program</h3>
+                <p class="achievement-org">Google Cloud & AI</p>
+                <p>Menyelesaikan pelatihan praktik langsung (hands-on labs) pada bidang Cloud Computing dan Artificial Intelligence.</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-year">2026</span>
+                <h3>Leadership & Professional Session</h3>
+                <p class="achievement-org">AIESEC KepoIn</p>
+                <p>Mengikuti sesi pengembangan kepemimpinan, komunikasi profesional, dan persiapan karier.</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-year">2026</span>
+                <h3>Proyek Analisis Data Probabilitas</h3>
+                <p class="achievement-org">Portofolio Data</p>
+                <p>Simulasi dan analisis statistik menggunakan sintesis data (n=500) dengan Python (Pandas & Matplotlib) di Jupyter Notebook.</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-year">2023 - 2024</span>
+                <h3>Panitia Sie Dokumentasi</h3>
+                <p class="achievement-org">SMAN 5 Surabaya</p>
+                <p>Bertanggung jawab atas dokumentasi foto/video serta publikasi acara Konser Nouveau Smala 2023, S2LC 2024, dan MPDK 2024.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-left">
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2>Let's Work Together</h2>
+                <p>Terbuka untuk kolaborasi proyek analisis data, UI/UX design, atau sekadar berdiskusi. Silakan hubungi saya!</p>
+                
+                <a href="CV Naura Afifah Fatchurohman.pdf" target="_blank" class="btn-primary">
+                    <i class="fa-solid fa-download"></i> Download CV / Resume
+                </a>
+            </div>
+
+            <div class="contact-links">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <span>Email</span>
+                        <a href="mailto:nauraafffatch02@gmail.com">nauraafffatch02@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <div>
+                        <span>LinkedIn</span>
+                        <a href="https://linkedin.com/in/nauraafifah" target="_blank">linkedin.com/in/nauraafifah</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <span>WhatsApp / Telepon</span>
+                        <a href="https://wa.me/6285711496609" target="_blank">+62 857-1149-6609</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <span>Lokasi</span>
+                        <a href="#">Surabaya, Indonesia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Naura Afifah Fatchurohman. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
